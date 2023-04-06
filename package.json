@@ -1,8 +1,8 @@
 {
-  "name": "basic-nestjs-layout",
+  "name": "savenft",
   "version": "0.0.1",
   "description": "",
-  "author": "",
+  "author": "Vênus Milo",
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
