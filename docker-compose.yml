@@ -1,0 +1,31 @@
+version: "3"
+services:
+  savenft:
+    container_name: application
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: production
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env
+    depends_on:
+      - database
+    links:
+      - database
+    networks:
+      - savenft
+  database:
+    image: postgres
+    restart: always
+    ports:
+      - "5432:5432"
+    env_file:
+      - .env
+    networks:
+      - savenft
+
+networks:
+  savenft:
+    driver: bridge
